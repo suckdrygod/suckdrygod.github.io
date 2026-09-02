@@ -5,8 +5,8 @@ umask 022
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SITE_DIR="${ROOT_DIR}/_site"
-REPO_NAME="${REPO_NAME:-SuckDryGod Repo}"
-REPO_ORIGIN="${REPO_ORIGIN:-SuckDryGod}"
+REPO_NAME="${REPO_NAME:-Eason}"
+REPO_ORIGIN="${REPO_ORIGIN:-Eason}"
 REPO_DESCRIPTION="${REPO_DESCRIPTION:-A personal iOS jailbreak package repository.}"
 
 if [[ -z "${ROOT_DIR}" || "${SITE_DIR}" != "${ROOT_DIR}/_site" ]]; then

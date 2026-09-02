@@ -1,4 +1,4 @@
-# SuckDryGod Repo
+# Eason
 
 这是一个托管在 GitHub Pages 上的个人 iOS 越狱 APT 软件源，同时支持传统 rootful、现代 rootless 与 rootHide 软件包。
 
