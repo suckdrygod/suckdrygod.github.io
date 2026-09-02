@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">SuckDryGod Repo</title>
+  <desc id="desc">A violet repository icon with a package and download arrow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="12" y1="8" x2="82" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C6AEFF"/>
+      <stop offset="0.52" stop-color="#8C6BE8"/>
+      <stop offset="1" stop-color="#5840A8"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="24" y1="20" x2="72" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#E4DCFF" stop-opacity="0.78"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#261B4E" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="90" height="90" rx="25" fill="url(#bg)"/>
+  <path d="M13 35C22 15 47 7 69 16C79 20 86 30 90 42V25C90 13 83 6 71 6H27C15 6 7 13 7 25V57C8 49 10 42 13 35Z" fill="#FFFFFF" fill-opacity="0.12"/>
+  <g filter="url(#shadow)" stroke="url(#shine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 36L48 23L72 36L48 49L24 36Z" fill="#FFFFFF" fill-opacity="0.14"/>
+    <path d="M24 36V62L48 76L72 62V36" fill="#251A4A" fill-opacity="0.20"/>
+    <path d="M48 49V76"/>
+  </g>
+  <path d="M48 33V58M39.5 49.5L48 58L56.5 49.5" fill="none" stroke="#C8FFD9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

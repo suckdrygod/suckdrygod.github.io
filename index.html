@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#090b11">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="SuckDryGod Repo — 面向越狱 iOS 设备的软件源，支持 Sileo、Zebra、Cydia 与 Installer。">
+    <meta property="og:title" content="SuckDryGod Repo">
+    <meta property="og:description" content="一个简洁、可靠的 iOS 越狱软件源。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suckdrygod.github.io/jailbreak-repo/">
+    <title>SuckDryGod Repo</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <style>
+      :root {
+        color-scheme: dark;
+        --page: #090b11;
+        --page-soft: #0d1019;
+        --surface: rgba(22, 25, 37, 0.72);
+        --surface-strong: rgba(27, 30, 44, 0.9);
+        --surface-hover: rgba(35, 38, 55, 0.92);
+        --text: #f6f7fb;
+        --muted: #a8afc1;
+        --subtle: #757d91;
+        --line: rgba(255, 255, 255, 0.1);
+        --line-bright: rgba(255, 255, 255, 0.17);
+        --violet: #ad91ff;
+        --violet-soft: #c8b7ff;
+        --mint: #79e4b7;
+        --mint-soft: #b8f5d8;
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+        --radius-xl: 30px;
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --content: 1120px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100svh;
+        margin: 0;
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 18% 0%, rgba(147, 111, 255, 0.16), transparent 32rem),
+          radial-gradient(circle at 96% 24%, rgba(82, 214, 163, 0.1), transparent 28rem),
+          linear-gradient(155deg, var(--page-soft) 0%, var(--page) 54%, #07080d 100%);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -2;
+        top: -9rem;
+        left: 48%;
+        width: 36rem;
+        height: 36rem;
+        border-radius: 50%;
+        background: rgba(117, 83, 218, 0.14);
+        filter: blur(90px);
+        content: "";
+        pointer-events: none;
+        transform: translateX(-50%);
+      }
+
+      body::after {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 54px 54px;
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent 76%);
+        pointer-events: none;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: var(--text);
+        color: var(--page);
+        font-weight: 700;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-12px);
+      }
+
+      .skip-link:focus {
+        opacity: 1;
+        outline: none;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .site-header {
+        width: min(calc(100% - 40px), var(--content));
+        margin: 0 auto;
+        padding: max(24px, env(safe-area-inset-top)) 0 16px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 13px;
+        box-shadow: 0 10px 24px rgba(72, 52, 129, 0.28);
+      }
+
+      .brand-copy {
+        display: grid;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .brand-name {
+        overflow: hidden;
+        font-size: 14px;
+        font-weight: 760;
+        letter-spacing: -0.01em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .brand-kind {
+        color: var(--subtle);
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .github-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        gap: 8px;
+        padding: 9px 13px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: rgba(255, 255, 255, 0.035);
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 650;
+        text-decoration: none;
+        transition: 180ms ease;
+        transition-property: color, background-color, border-color, transform;
+      }
+
+      .github-link svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .github-link:hover {
+        border-color: var(--line-bright);
+        background: rgba(255, 255, 255, 0.065);
+        color: var(--text);
+        transform: translateY(-1px);
+      }
+
+      .page {
+        width: min(calc(100% - 40px), var(--content));
+        margin: 0 auto;
+        padding: clamp(36px, 7vw, 86px) 0 32px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.03fr) minmax(330px, 0.97fr);
+        align-items: center;
+        gap: clamp(34px, 6vw, 74px);
+      }
+
+      .intro {
+        min-width: 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 22px;
+        padding: 8px 12px;
+        border: 1px solid rgba(173, 145, 255, 0.2);
+        border-radius: 999px;
+        background: rgba(142, 106, 234, 0.08);
+        color: var(--violet-soft);
+        font-size: 12px;
+        font-weight: 720;
+        letter-spacing: 0.06em;
+      }
+
+      .eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--mint);
+        box-shadow: 0 0 0 5px rgba(121, 228, 183, 0.09), 0 0 15px rgba(121, 228, 183, 0.5);
+      }
+
+      h1 {
+        max-width: 680px;
+        margin: 0;
+        color: var(--text);
+        font-size: clamp(48px, 7vw, 78px);
+        font-weight: 820;
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      h1 span {
+        display: block;
+        background: linear-gradient(115deg, #ffffff 10%, #d8cdfb 52%, #92e5c3 110%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lead {
+        max-width: 570px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(16px, 2vw, 19px);
+        line-height: 1.75;
+      }
+
+      .trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 28px;
+      }
+
+      .trust-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: rgba(255, 255, 255, 0.025);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 640;
+      }
+
+      .trust-item svg {
+        width: 14px;
+        height: 14px;
+        color: var(--mint);
+      }
+
+      .compatibility {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .compatibility-title {
+        color: var(--subtle);
+        font-size: 10px;
+        font-weight: 760;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .architecture-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .architecture-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--violet);
+        box-shadow: 0 0 10px rgba(173, 145, 255, 0.42);
+      }
+
+      .architecture-item:nth-child(2) .architecture-dot {
+        background: var(--mint);
+        box-shadow: 0 0 10px rgba(121, 228, 183, 0.4);
+      }
+
+      .architecture-item:nth-child(3) .architecture-dot {
+        background: #72b8ff;
+        box-shadow: 0 0 10px rgba(114, 184, 255, 0.4);
+      }
+
+      .architecture-name {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 720;
+      }
+
+      .architecture-code {
+        color: var(--subtle);
+        font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
+        font-size: 10px;
+      }
+
+      .repo-card {
+        position: relative;
+        min-width: 0;
+        padding: clamp(20px, 3vw, 28px);
+        overflow: hidden;
+        border: 1px solid var(--line-bright);
+        border-radius: var(--radius-xl);
+        background:
+          linear-gradient(150deg, rgba(255, 255, 255, 0.08), transparent 38%),
+          var(--surface);
+        box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        isolation: isolate;
+      }
+
+      @supports (backdrop-filter: blur(20px)) {
+        .repo-card,
+        .manual {
+          -webkit-backdrop-filter: blur(24px) saturate(125%);
+          backdrop-filter: blur(24px) saturate(125%);
+        }
+      }
+
+      .repo-card::before {
+        position: absolute;
+        z-index: -1;
+        top: -80px;
+        right: -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(158, 124, 255, 0.16);
+        filter: blur(50px);
+        content: "";
+      }
+
+      .card-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 17px;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+      }
+
+      .secure {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--mint-soft);
+        font-size: 11px;
+        font-weight: 720;
+      }
+
+      .secure svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      .source-field {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 7px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: rgba(5, 7, 12, 0.5);
+      }
+
+      .source-url {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        min-height: 45px;
+        padding: 0 9px;
+        overflow: hidden;
+        color: #dce0eb;
+        font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
+        font-size: 12px;
+        line-height: 1.45;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .copy-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 94px;
+        min-height: 45px;
+        gap: 7px;
+        padding: 0 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 11px;
+        background: linear-gradient(135deg, #a788ff, #8866e4);
+        box-shadow: 0 9px 20px rgba(101, 72, 190, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        color: #fff;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 760;
+        transition: 180ms ease;
+        transition-property: filter, transform, box-shadow;
+      }
+
+      .copy-button svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .copy-button:hover {
+        filter: brightness(1.08);
+        box-shadow: 0 12px 24px rgba(101, 72, 190, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        transform: translateY(-1px);
+      }
+
+      .copy-button.is-copied {
+        background: linear-gradient(135deg, #56bd91, #3d9a76);
+      }
+
+      .section-label {
+        margin: 24px 0 12px;
+        color: var(--subtle);
+        font-size: 11px;
+        font-weight: 730;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .manager-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .manager {
+        display: flex;
+        align-items: center;
+        min-height: 66px;
+        gap: 11px;
+        padding: 11px 13px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.035);
+        text-decoration: none;
+        transition: 180ms ease;
+        transition-property: background-color, border-color, transform, box-shadow;
+      }
+
+      .manager:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: var(--surface-hover);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .manager-mark {
+        display: grid;
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 12px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 820;
+        letter-spacing: -0.04em;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      }
+
+      .sileo .manager-mark { background: linear-gradient(145deg, #675eff, #a56dff); }
+      .zebra .manager-mark { background: linear-gradient(145deg, #31343e, #676c79); }
+      .cydia .manager-mark { background: linear-gradient(145deg, #906445, #c3976d); }
+      .installer .manager-mark { background: linear-gradient(145deg, #3287ff, #5bc4e6); }
+
+      .manager-copy {
+        display: grid;
+        min-width: 0;
+        gap: 3px;
+      }
+
+      .manager-name {
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .manager-action {
+        color: var(--subtle);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .manager-arrow {
+        width: 15px;
+        height: 15px;
+        margin-left: auto;
+        color: #697287;
+        transition: transform 180ms ease, color 180ms ease;
+      }
+
+      .manager:hover .manager-arrow {
+        color: var(--violet-soft);
+        transform: translateX(2px);
+      }
+
+      .device-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin: 17px 2px 0;
+        color: var(--subtle);
+        font-size: 11px;
+        line-height: 1.55;
+      }
+
+      .device-note svg {
+        flex: 0 0 auto;
+        width: 14px;
+        height: 14px;
+        margin-top: 1px;
+      }
+
+      .manual {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 28px;
+        margin-top: clamp(54px, 8vw, 96px);
+        padding: clamp(22px, 4vw, 34px);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: rgba(18, 21, 31, 0.58);
+      }
+
+      .manual-kicker {
+        margin: 0 0 8px;
+        color: var(--mint);
+        font-size: 11px;
+        font-weight: 760;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .manual h2 {
+        margin: 0;
+        font-size: clamp(22px, 3vw, 28px);
+        letter-spacing: -0.035em;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .step {
+        min-width: 0;
+        padding-left: 13px;
+        border-left: 1px solid var(--line-bright);
+      }
+
+      .step-number {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--violet-soft);
+        font-family: ui-monospace, "SFMono-Regular", monospace;
+        font-size: 11px;
+        font-weight: 760;
+      }
+
+      .step strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 13px;
+      }
+
+      .step span {
+        color: var(--subtle);
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .site-footer {
+        width: min(calc(100% - 40px), var(--content));
+        margin: 0 auto;
+        padding: 36px 0 max(34px, env(safe-area-inset-bottom));
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        color: var(--subtle);
+        font-size: 11px;
+      }
+
+      .footer-inner p {
+        margin: 0;
+      }
+
+      .footer-inner a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .footer-inner a:hover {
+        color: var(--text);
+      }
+
+      .toast {
+        position: fixed;
+        z-index: 10;
+        right: max(18px, env(safe-area-inset-right));
+        bottom: max(18px, env(safe-area-inset-bottom));
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        max-width: calc(100% - 36px);
+        padding: 12px 15px;
+        border: 1px solid rgba(124, 236, 189, 0.22);
+        border-radius: 13px;
+        background: rgba(19, 29, 26, 0.94);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+        color: var(--mint-soft);
+        font-size: 12px;
+        font-weight: 700;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .toast.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .toast svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      :focus-visible {
+        outline: 3px solid rgba(183, 158, 255, 0.75);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          padding-top: 48px;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 42px;
+        }
+
+        .intro {
+          max-width: 700px;
+        }
+
+        .repo-card {
+          width: 100%;
+          max-width: 700px;
+        }
+
+        .manual {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .site-header,
+        .page,
+        .site-footer {
+          width: min(calc(100% - 28px), var(--content));
+        }
+
+        .site-header {
+          padding-top: max(16px, env(safe-area-inset-top));
+        }
+
+        .github-link span {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+        }
+
+        .github-link {
+          justify-content: center;
+          width: 42px;
+          padding: 0;
+        }
+
+        .page {
+          padding-top: 36px;
+        }
+
+        h1 {
+          font-size: clamp(44px, 14vw, 62px);
+        }
+
+        .lead {
+          margin-top: 20px;
+          font-size: 16px;
+        }
+
+        .repo-card {
+          margin-inline: -2px;
+          border-radius: 25px;
+        }
+
+        .source-field {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .source-url {
+          min-height: 40px;
+        }
+
+        .copy-button {
+          width: 100%;
+        }
+
+        .manager-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .manager {
+          min-height: 64px;
+        }
+
+        .manual {
+          margin-top: 56px;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#repo-actions">跳到添加软件源</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="./" aria-label="SuckDryGod Repo 首页">
+          <img src="assets/icon.svg" alt="" width="42" height="42">
+          <span class="brand-copy">
+            <span class="brand-name">SuckDryGod Repo</span>
+            <span class="brand-kind">iOS APT Repository</span>
+          </span>
+        </a>
+        <a class="github-link" href="https://github.com/suckdrygod/jailbreak-repo" aria-label="在 GitHub 查看软件源">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 19c-4.5 1.4-4.5-2.4-6.3-3m12.6 5v-3.5c0-1 .1-1.5-.5-2.1 2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 19 6.2 4.4 4.4 0 0 0 18.9 3S17.8 2.7 15.3 4.2a12.3 12.3 0 0 0-6.5 0C6.3 2.7 5.2 3 5.2 3A4.4 4.4 0 0 0 5 6.2a4.7 4.7 0 0 0-1.3 3.2c0 4.7 2.8 5.7 5.5 6-.6.5-.6 1-.5 2.1V21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>查看 GitHub</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>软件源已上线</p>
+          <h1 id="page-title"><span>SuckDryGod</span>Repo</h1>
+          <p class="lead">一个简洁、可靠的 iOS 越狱软件源。选择你正在使用的包管理器，一步添加并保持更新。</p>
+          <div class="trust-row" aria-label="软件源特点">
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.7"/></svg>
+              HTTPS 安全连接
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v5l3-3M12 21v-5l-3 3M4.2 8.2l4.3 2.5-1.1-4M19.8 15.8l-4.3-2.5 1.1 4M4.2 15.8l4.3-2.5-4-.9M19.8 8.2l-4.3 2.5 4 .9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              多包管理器支持
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-2.6-6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M18 2v4h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              持续维护
+            </span>
+          </div>
+          <div class="compatibility" aria-label="兼容架构">
+            <span class="compatibility-title">兼容架构</span>
+            <ul class="architecture-list">
+              <li class="architecture-item">
+                <span class="architecture-dot" aria-hidden="true"></span>
+                <span class="architecture-name">Rootful</span>
+                <code class="architecture-code">iphoneos-arm</code>
+              </li>
+              <li class="architecture-item">
+                <span class="architecture-dot" aria-hidden="true"></span>
+                <span class="architecture-name">Rootless</span>
+                <code class="architecture-code">iphoneos-arm64</code>
+              </li>
+              <li class="architecture-item">
+                <span class="architecture-dot" aria-hidden="true"></span>
+                <span class="architecture-name">rootHide</span>
+                <code class="architecture-code">iphoneos-arm64e</code>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="repo-card" id="repo-actions">
+          <div class="card-heading">
+            <h2 class="card-title">添加软件源</h2>
+            <span class="secure">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              HTTPS
+            </span>
+          </div>
+
+          <div class="source-field" data-source-url="https://suckdrygod.github.io/jailbreak-repo/">
+            <code class="source-url" title="https://suckdrygod.github.io/jailbreak-repo/">https://suckdrygod.github.io/jailbreak-repo/</code>
+            <button class="copy-button" type="button" aria-label="复制软件源地址">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="8" y="8" width="11" height="11" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span class="copy-label">复制地址</span>
+            </button>
+          </div>
+
+          <p class="section-label">选择包管理器</p>
+          <div class="manager-grid">
+            <a class="manager sileo" href="sileo://source/https://suckdrygod.github.io/jailbreak-repo/" aria-label="添加到 Sileo">
+              <span class="manager-mark" aria-hidden="true">S</span>
+              <span class="manager-copy">
+                <span class="manager-name">Sileo</span>
+                <span class="manager-action">一键添加</span>
+              </span>
+              <svg class="manager-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="manager zebra" href="zbra://sources/add/https://suckdrygod.github.io/jailbreak-repo/" aria-label="添加到 Zebra">
+              <span class="manager-mark" aria-hidden="true">Z</span>
+              <span class="manager-copy">
+                <span class="manager-name">Zebra</span>
+                <span class="manager-action">一键添加</span>
+              </span>
+              <svg class="manager-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="manager cydia" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://suckdrygod.github.io/jailbreak-repo/" aria-label="添加到 Cydia">
+              <span class="manager-mark" aria-hidden="true">C</span>
+              <span class="manager-copy">
+                <span class="manager-name">Cydia</span>
+                <span class="manager-action">一键添加</span>
+              </span>
+              <svg class="manager-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="manager installer" href="installer://add/repo=https://suckdrygod.github.io/jailbreak-repo/" aria-label="添加到 Installer">
+              <span class="manager-mark" aria-hidden="true">I</span>
+              <span class="manager-copy">
+                <span class="manager-name">Installer</span>
+                <span class="manager-action">一键添加</span>
+              </span>
+              <svg class="manager-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <p class="device-note">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.3v.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            请在已安装对应包管理器的越狱 iPhone 或 iPad 上点击。
+          </p>
+          <noscript><p class="device-note">浏览器已禁用 JavaScript；一键添加仍可使用，但复制按钮不可用。</p></noscript>
+        </div>
+      </section>
+
+      <section class="manual" aria-labelledby="manual-title">
+        <div>
+          <p class="manual-kicker">Manual setup</p>
+          <h2 id="manual-title">也可以手动添加</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number">01</span>
+            <strong>复制地址</strong>
+            <span>点击上方“复制地址”按钮。</span>
+          </li>
+          <li class="step">
+            <span class="step-number">02</span>
+            <strong>打开软件源</strong>
+            <span>进入包管理器的“软件源”页面。</span>
+          </li>
+          <li class="step">
+            <span class="step-number">03</span>
+            <strong>粘贴并添加</strong>
+            <span>粘贴地址，确认后等待刷新完成。</span>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© <span id="year">2026</span> SuckDryGod Repo</p>
+        <p>Hosted on <a href="https://pages.github.com/">GitHub Pages</a> · No tracking</p>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>软件源地址已复制</span>
+    </div>
+
+    <script>
+      (function () {
+        var sourceField = document.querySelector(".source-field");
+        var copyButton = document.querySelector(".copy-button");
+        var copyLabel = document.querySelector(".copy-label");
+        var toast = document.querySelector(".toast");
+        var year = document.querySelector("#year");
+        var resetTimer;
+
+        year.textContent = new Date().getFullYear();
+
+        function fallbackCopy(value) {
+          var textArea = document.createElement("textarea");
+          textArea.value = value;
+          textArea.setAttribute("readonly", "");
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.select();
+          var copied = document.execCommand("copy");
+          document.body.removeChild(textArea);
+          if (!copied) throw new Error("Copy command failed");
+        }
+
+        function copySucceeded() {
+          window.clearTimeout(resetTimer);
+          copyButton.classList.add("is-copied");
+          copyButton.setAttribute("aria-label", "软件源地址已复制");
+          copyLabel.textContent = "已复制";
+          toast.classList.add("is-visible");
+
+          resetTimer = window.setTimeout(function () {
+            copyButton.classList.remove("is-copied");
+            copyButton.setAttribute("aria-label", "复制软件源地址");
+            copyLabel.textContent = "复制地址";
+            toast.classList.remove("is-visible");
+          }, 2200);
+        }
+
+        function copyFailed() {
+          var sourceCode = document.querySelector(".source-url");
+          copyLabel.textContent = "请手动复制";
+          copyButton.setAttribute("aria-label", "复制失败，请手动选择地址");
+          if (sourceCode && sourceCode.focus) sourceCode.focus();
+        }
+
+        function copySource() {
+          var sourceUrl = sourceField.getAttribute("data-source-url");
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(sourceUrl).then(copySucceeded, copyFailed);
+            return;
+          }
+
+          try {
+            fallbackCopy(sourceUrl);
+            copySucceeded();
+          } catch (error) {
+            copyFailed();
+          }
+        }
+
+        copyButton.addEventListener("click", copySource);
+      })();
+    </script>
+  </body>
+</html>

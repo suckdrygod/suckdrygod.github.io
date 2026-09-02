@@ -1,0 +1,10 @@
+Package: com.example.package
+Name: Example Package
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: A short description of the rootful package.
+Maintainer: Your Name
+Author: Your Name
+Section: Tweaks
+Depiction: https://suckdrygod.github.io/jailbreak-repo/depictions/com.example.package/
+

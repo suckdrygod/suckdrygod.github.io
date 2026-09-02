@@ -1,0 +1,11 @@
+Package: com.example.package
+Name: Example Package
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: A short description of the rootless package.
+Maintainer: Your Name
+Author: Your Name
+Section: Tweaks
+Depends: firmware (>= 15.0)
+Depiction: https://suckdrygod.github.io/jailbreak-repo/depictions/com.example.package/
+
