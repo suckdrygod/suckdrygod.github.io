@@ -7,7 +7,7 @@
 软件源地址：
 
 ```text
-https://suckdrygod.github.io/jailbreak-repo/
+https://suckdrygod.github.io/
 ```
 
 在已越狱设备上打开上述网页，或把地址粘贴到 Sileo、Zebra、Cydia、Installer 中。
@@ -61,5 +61,7 @@ rootHide 的 `.deb` 架构应为 `iphoneos-arm64e`，但这不代表每个 Mach-
 - `scripts/build-repo.sh` — APT 索引生成脚本
 - `.github/workflows/deploy.yml` — GitHub Pages 自动发布流程
 - `index.html` — 软件源首页
+
+旧地址 `https://suckdrygod.github.io/jailbreak-repo/` 会保留兼容副本，已添加旧地址的设备仍可刷新；新设备请使用上面的短地址。
 
 请只发布自己制作或已获得再分发许可的软件包。

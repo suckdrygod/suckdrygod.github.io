@@ -66,4 +66,20 @@ trap 'rm -f "${release_body}"' EXIT
 mv "${release_body}" "${SITE_DIR}/Release"
 trap - EXIT
 
+# Keep the original project-site path working for devices that already added it.
+LEGACY_DIR="${SITE_DIR}/jailbreak-repo"
+mkdir -p "${LEGACY_DIR}"
+cp "${SITE_DIR}/index.html" "${LEGACY_DIR}/index.html"
+cp "${SITE_DIR}/404.html" "${LEGACY_DIR}/404.html"
+cp "${SITE_DIR}/.nojekyll" "${LEGACY_DIR}/.nojekyll"
+cp "${SITE_DIR}/CydiaIcon.png" "${LEGACY_DIR}/CydiaIcon.png"
+cp "${SITE_DIR}/Packages" "${LEGACY_DIR}/Packages"
+cp "${SITE_DIR}/Packages.gz" "${LEGACY_DIR}/Packages.gz"
+cp "${SITE_DIR}/Packages.bz2" "${LEGACY_DIR}/Packages.bz2"
+cp "${SITE_DIR}/Packages.xz" "${LEGACY_DIR}/Packages.xz"
+cp "${SITE_DIR}/Release" "${LEGACY_DIR}/Release"
+cp -R "${SITE_DIR}/assets" "${LEGACY_DIR}/assets"
+cp -R "${SITE_DIR}/depictions" "${LEGACY_DIR}/depictions"
+cp -R "${SITE_DIR}/pool" "${LEGACY_DIR}/pool"
+
 echo "Repository built at ${SITE_DIR}"
