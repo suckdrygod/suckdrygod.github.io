@@ -1,0 +1,12 @@
+{
+  "class": "FeaturedBannersView",
+  "itemSize": "{390, 185}",
+  "itemCornerRadius": 12,
+  "banners": [
+    {
+      "url": "https://suckdrygod.github.io/assets/repo-featured-banner.jpg",
+      "title": "欢迎来到我的软件源",
+      "hideShadow": false
+    }
+  ]
+}
