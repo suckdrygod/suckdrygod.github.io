@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 自动识别支持的 iPhone 机型并加载对应按键模块。\n\n- iPhone 15 Pro / Pro Max：操作按钮短按系统截图，长按图片翻译。\n\n- iPhone 14 系列：音量＋短按系统截图、长按图片翻译；音量－短按降低音量、长按持续增加音量。\n\n- 插件识别出的单独短按会绕过一次第三方截图增强，直接调用苹果原生截图。\n\n- 支持配置百度图片翻译的源语言和目标语言。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "机型与系统适配", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 支持 iPhone 14、14 Plus、14 Pro、14 Pro Max。\n\n- 支持 iPhone 15 Pro、15 Pro Max。\n\n- 支持 iOS 16.0 至 iOS 17.3.1。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 请在设置中启用插件。\n\n- 使用翻译前需要填写百度智能云 API Key、Secret Key，并主动开启截图上传许可。\n\n- 长按翻译会通过 HTTPS 上传当前完整屏幕截图，但不会写入相册或本地缓存。\n\n- 越狱环境无法保证密钥不会被其他插件读取，请自行评估隐私风险。\n\n- iOS 16 使用系统显示缓冲区截图，iOS 17 使用 ScreenshotServices。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "0.2.13"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "0.2.13", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 单独短按触发的截图会绕过一次第三方截图增强，直达系统原生截图流程。\n\n- 保留系统闪光、截图声音、相册保存和左下角缩略图。\n\n- 组合键截图、第三方插件入口及其他截图调用仍按原有流程执行。\n\n- 单次标记使用后立即清除，未使用时约 1 秒后自动失效。\n\n- 按 iOS 版本分别使用显示缓冲区或 ScreenshotServices 完成翻译截图。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

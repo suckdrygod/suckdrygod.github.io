@@ -5,6 +5,7 @@ umask 022
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SITE_DIR="${ROOT_DIR}/_site"
+OVERRIDE_FILE="${ROOT_DIR}/config/package-overrides"
 REPO_NAME="${REPO_NAME:-Eason}"
 REPO_ORIGIN="${REPO_ORIGIN:-Eason}"
 REPO_DESCRIPTION="${REPO_DESCRIPTION:-A personal iOS jailbreak package repository.}"
@@ -25,8 +26,16 @@ cp -R "${ROOT_DIR}/assets" "${SITE_DIR}/assets"
 cp "${ROOT_DIR}/sileo-featured.json" "${SITE_DIR}/sileo-featured.json"
 
 if [[ -d "${ROOT_DIR}/depictions" ]]; then
+  for depiction in "${ROOT_DIR}"/depictions/*.json; do
+    python3 -m json.tool "${depiction}" > /dev/null
+  done
   cp -R "${ROOT_DIR}/depictions/." "${SITE_DIR}/depictions/"
   rm -f "${SITE_DIR}/depictions/.gitkeep"
+fi
+
+if [[ ! -f "${OVERRIDE_FILE}" ]]; then
+  echo "Missing package override file: ${OVERRIDE_FILE}" >&2
+  exit 1
 fi
 
 shopt -s nullglob
@@ -35,7 +44,7 @@ if (( ${#deb_files[@]} > 0 )); then
   cp "${deb_files[@]}" "${SITE_DIR}/pool/"
   (
     cd "${SITE_DIR}"
-    dpkg-scanpackages --multiversion pool /dev/null
+    dpkg-scanpackages --multiversion --extra-override "${OVERRIDE_FILE}" pool /dev/null
   ) > "${SITE_DIR}/Packages"
 else
   : > "${SITE_DIR}/Packages"

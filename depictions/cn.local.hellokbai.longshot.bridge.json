@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 在 Hello 键盘侠截图操作栏中加入“长截图”和“拼图”按钮。\n\n- 长截图调用 StayShot 长截图引擎。\n\n- 拼图使用 Hello 自带引擎，仅处理内存中的最近截图。\n\n- 不新增截图入口、窗口或菜单。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，软件包架构为 `iphoneos-arm64e`。\n\n- 需要 Hello 键盘侠、StayShot 长截图引擎及 MobileSubstrate。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 功能入口位于 Hello 键盘侠的截图操作栏。\n\n- 拼图功能不读取相册、不访问剪贴板，也不写入临时文件。\n\n- StayShot 引擎会作为依赖一同安装。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "2.0.3"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "2.0.3", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 更新桥接组件及软件包版本至 2.0.3。\n\n- 提供长截图、拼图按钮及对应的两套操作栏图标。\n\n- 继续保持拼图仅处理内存中最近截图的工作方式。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

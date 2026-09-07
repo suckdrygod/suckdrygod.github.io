@@ -16,8 +16,9 @@ https://suckdrygod.github.io/
 
 1. 构建一个有效的 Debian 软件包（`.deb`）。
 2. 把它放进 [`pool`](./pool) 目录。
-3. 提交并推送到 `main`。
-4. GitHub Actions 会重新生成 `Packages`、压缩索引和 `Release`，随后自动发布。
+3. 在 [`depictions`](./depictions) 中添加 Sileo 原生“描述 / 更新”详情页，并在 [`config/package-overrides`](./config/package-overrides) 登记详情页地址和必要的分类覆盖。
+4. 提交并推送到 `main`。
+5. GitHub Actions 会验证详情页、重新生成 `Packages`、压缩索引和 `Release`，随后自动发布。
 
 一个最小的 `control` 文件通常包含：
 
@@ -57,7 +58,8 @@ rootHide 的 `.deb` 架构应为 `iphoneos-arm64e`，但这不代表每个 Mach-
 ## 目录结构
 
 - `pool/` — `.deb` 软件包
-- `depictions/` — 可选的软件包介绍页
+- `depictions/` — Sileo 原生“描述 / 更新”双标签详情页
+- `config/package-overrides` — 软件包摘要、分类及详情页地址覆盖
 - `scripts/build-repo.sh` — APT 索引生成脚本
 - `.github/workflows/deploy.yml` — GitHub Pages 自动发布流程
 - `index.html` — 软件源首页

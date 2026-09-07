@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 提供 StayShot Long Screenshot 1.4.9 的长截图处理能力。\n\n- 由 Hello 长截图桥接按需载入。\n\n- 不包含 MobileSubstrate 过滤器，不会自行注入 SpringBoard。\n\n- 不会向 Snapper 3 注册插件或生成第二个长截图按钮。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，支持 iOS 15.1 及以上版本。\n\n- 需要 Orion 1.0.0 或更高版本。\n\n- 与原版 `com.susudear.stayshot.long-screenshot` 冲突并替代该包。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 本包是后台引擎，没有独立设置页或操作入口。\n\n- 通常由 Hello 长截图桥接自动作为依赖安装。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "1.4.9-rh1"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "1.4.9-rh1", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 将 StayShot 1.4.9 调整为 RootHide 安装布局。\n\n- 引擎二进制与官方 1.4.9 逐字节一致。\n\n- 保持按需加载，不增加全局注入或重复按钮。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

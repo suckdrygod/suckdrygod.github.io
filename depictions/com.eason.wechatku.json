@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 提供自动及后台抢红包、延迟、群聊与关键词过滤等红包功能。\n\n- 提供自动回复、转账回执、防撤回、朋友圈转发和一键已读。\n\n- 支持好友关系检测、批量删除及部分聊天内容显示修改。\n\n- 提供虚拟摄像头、原生相机、语音包、文字转语音等媒体功能。\n\n- 包含 CallKit、动态启动图、聊天背景、头像圆角和界面伪装等扩展。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，仅向微信主程序加载。\n\n- 原插件内部版本为 `1.6-3`。\n\n- 提供者说明：修复闪退至最新版微信。该说法目前未经最新版微信真机验证。\n\n- 插件大量依赖微信私有接口，微信升级后可能出现闪退或部分功能失效。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明与风险", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 插件包含红包、转账、好友及消息相关功能，可能触发微信风控或封号，不建议主号使用。\n\n- 部分功能会连接第三方网络服务，文字转语音等功能可能向外部服务发送内容。\n\n- 插件具有读取剪贴板、设备标识及微信数据的能力，请自行评估隐私风险。\n\n- 不建议与 MisakaHelper 或其他完整微信增强插件同时安装；软件包已设置互斥。\n\n- 使用前请备份重要数据，并在 RootHide App List 中允许微信注入。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "1.6-3-rh1"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "1.6-3-rh1", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 将内部版本为 1.6-3 的原插件转换为 RootHide 安装布局。\n\n- 软件包仅向微信主程序加载。\n\n- 本次可确认的变更为 RootHide 打包适配。\n\n- “修复闪退至最新版微信”属于提供者说明，目前没有最新版微信真机验证结果。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

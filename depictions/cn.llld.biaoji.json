@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 对截图添加箭头、文字、高亮、马赛克与放大标记。\n\n- 支持将处理结果保存到相册或复制到剪贴板。\n\n- 集成静态主 Scene 修复，改善截图标记界面的启动流程。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，软件包架构为 `iphoneos-arm64e`。\n\n- 插件加载于 SpringBoard；原包未声明具体 iOS 版本范围。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 安装后请注销或重启用户空间。\n\n- RootHide 转换过程未改动补丁二进制。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "1.6+scene6-rh1"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "1.6+scene6-rh1", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 集成截图标记 1.6 静态主 Scene 修复。\n\n- 调整为 RootHide 安装布局及软件包架构。\n\n- 转换过程保持补丁二进制不变。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

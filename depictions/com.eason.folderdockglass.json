@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 为桌面 Dock 添加玻璃效果。\n\n- 为文件夹图标和已打开的文件夹添加玻璃效果。\n\n- 为锁屏通知界面添加玻璃效果。\n\n- 不改变其他系统界面的显示样式。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide 和 iOS 15–17。\n\n- 与 LiquidGlass 及 `com.eason.ios26lockscreen` 等同类界面修改包冲突。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 本插件没有设置页面，安装后自动生效。\n\n- 安装或卸载后请执行用户空间重启。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "1.1.0"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "1.1.0", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 发布 RootHide 版本。\n\n- 将玻璃效果限定于 Dock、文件夹图标、已打开文件夹和锁屏通知。\n\n- 无需额外配置，安装后重启用户空间即可使用。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

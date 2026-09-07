@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 通过左滑手势返回上一页面。\n\n- 支持应用黑名单、白名单及单独选择应用。\n\n- 可调节手势灵敏度和震动反馈强度。\n\n- 在导航栈根页面可选择关闭弹出页面或返回桌面。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，软件包架构为 `iphoneos-arm64e`。\n\n- 作用于使用 UIKit 的应用。\n\n- 当前版本针对微信 8.0.75 的朋友圈、相册和个人资料页进行了冲突处理。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 请在系统设置中的 Hello Left 页面启用插件并设置应用范围。\n\n- 启用、停用、切换过滤模式或更改应用列表后需要注销。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "2.0.6"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "2.0.6", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 修复微信 8.0.75 朋友圈、相册及个人资料页的手势冲突。\n\n- 提供应用黑白名单、灵敏度和震动反馈设置。\n\n- 支持在根页面关闭弹出控制器或返回桌面。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

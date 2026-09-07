@@ -1,0 +1,27 @@
+cn.llld.biaoji Description 截图标记 1.6 静态主 Scene 修复的 RootHide 版，支持截图标注、保存与复制。
+cn.llld.biaoji SileoDepiction https://suckdrygod.github.io/depictions/cn.llld.biaoji.json
+cn.local.hellokbai.longshot.bridge Description 在 Hello 键盘侠截图操作栏中加入长截图与拼图功能。
+cn.local.hellokbai.longshot.bridge SileoDepiction https://suckdrygod.github.io/depictions/cn.local.hellokbai.longshot.bridge.json
+cn.local.stayshot.longscreenshot.engine Description 为 Hello 长截图桥接提供按需调用的 StayShot 1.4.9 长截图引擎。
+cn.local.stayshot.longscreenshot.engine SileoDepiction https://suckdrygod.github.io/depictions/cn.local.stayshot.longscreenshot.engine.json
+com.25mao.leftPan Description 为应用加入左滑返回手势，并修复微信 8.0.75 部分页面的手势冲突。
+com.25mao.leftPan SileoDepiction https://suckdrygod.github.io/depictions/com.25mao.leftPan.json
+com.eason.fivegadvanced Description VPN 状态栏上色、隐藏 VPN、5GA 与静音显示增强，支持 iOS 16–17。
+com.eason.fivegadvanced SileoDepiction https://suckdrygod.github.io/depictions/com.eason.fivegadvanced.json
+com.eason.folderdockglass Description 为 Dock、文件夹和锁屏通知加入玻璃效果的 RootHide 版本。
+com.eason.folderdockglass SileoDepiction https://suckdrygod.github.io/depictions/com.eason.folderdockglass.json
+com.eason.shortcutsintentguard Description 修复 iOS 16 快捷指令因 Visual Intelligence App Intent 元数据导致的闪退。
+com.eason.shortcutsintentguard SileoDepiction https://suckdrygod.github.io/depictions/com.eason.shortcutsintentguard.json
+com.eason.yikey Description 为 iPhone 14 和 iPhone 15 Pro 系列提供按键截图与图片翻译功能。
+com.eason.yikey SileoDepiction https://suckdrygod.github.io/depictions/com.eason.yikey.json
+com.netskao.wcdisablehotupdates Description 禁止微信 8.0.76.36 执行热更新，同时保留公众号所需的启动初始化。
+com.netskao.wcdisablehotupdates Section 微信插件
+com.netskao.wcdisablehotupdates SileoDepiction https://suckdrygod.github.io/depictions/com.netskao.wcdisablehotupdates.json
+com.eason.wechatku Description 修复闪退至最新版微信。
+com.eason.wechatku Section 微信插件
+com.eason.wechatku SileoDepiction https://suckdrygod.github.io/depictions/com.eason.wechatku.json
+com.eason.misakahelper Description 修复至最新版微信。
+com.eason.misakahelper Section 微信插件
+com.eason.misakahelper SileoDepiction https://suckdrygod.github.io/depictions/com.eason.misakahelper.json
+local.relaxin.snapshotfix Description 修复 iOS 17.3.1 环境下 Relaxin 白巨魔应用启动黑屏问题，针对被系统拒绝的第三方 Storyboard 应用按版本或安装状态自动重试一次。由真皮提供思路解决。
+local.relaxin.snapshotfix SileoDepiction https://suckdrygod.github.io/depictions/local.relaxin.snapshotfix.json

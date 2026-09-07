@@ -1,0 +1,31 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 修复 iOS 17.3.1 SpringBoard 启动快照兼容问题。\n\n- 当第三方 Storyboard 应用被记录为无效启动图时，清理当前拒绝状态并自动重试。\n\n- 每个应用版本或每次安装最多自动重试一次，避免持续重置。\n\n- 所需系统接口不存在或运行时结构不匹配时会停止处理，不强行修改状态。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 仅适用于 iOS `17.3.1`。\n\n- 适用于 RootHide，软件包架构为 `iphoneos-arm64e`。\n\n- 插件加载于 SpringBoard；其他 iOS 版本会保持停用。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 安装后请注销或重启用户空间。\n\n- 本插件针对 Relaxin 白巨魔环境下第三方 Storyboard 应用的启动黑屏。\n\n- 若自动重试后仍然黑屏，插件不会对同一应用版本进行无限重复重置。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "0.1.3"},
+        {"class": "DepictionMarkdownView", "markdown": "由真皮提供思路解决。", "useSpacing": true, "useRawFormat": false}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "0.1.3", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 将补丁范围严格限定为 iOS 17.3.1。\n\n- 检测第三方 Storyboard 应用的启动快照拒绝状态。\n\n- 每个应用版本或安装只允许一次自动恢复重试。\n\n- 缺少所需系统接口或运行时结构不匹配时安全停用。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 提供防撤回、消息记录、消息排序、自动回复和关键词回复。\n\n- 支持定时群发、群聊分组、群管理及好友关系检测。\n\n- 提供自动红包、红包过滤和转账回复等功能。\n\n- 支持图片、视频和语音下载，以及截图套壳和相册相关扩展。\n\n- 包含微信插件加载与管理能力。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "兼容性", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 适用于 RootHide，仅向微信主程序加载。\n\n- 原始附件无法可靠读取上游版本，因此使用 `0+unknown-rh1`，避免伪造版本信息。\n\n- 本地来源标注为微信 8.0.76 修复版；提供者说明“修复至最新版微信”，但目前未经最新版微信真机验证。\n\n- 插件大量依赖微信内部接口，微信升级后可能闪退或失效。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明与风险", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 这是完整微信增强插件，并非单一闪退修复。\n\n- 插件为闭源且经过重度混淆，包含网络授权、读取微信数据、下载解压及动态加载插件的能力。\n\n- 红包、转账、好友和消息功能可能触发微信风控或封号，不建议主号使用。\n\n- 不建议与 Wechatku 爱疯助手或其他完整微信增强插件同时安装；软件包已设置互斥。\n\n- 使用前请备份重要数据，并在 RootHide App List 中允许微信注入。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "0+unknown-rh1"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "0+unknown-rh1", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 将用户提供的 MisakaHelper 附件转换为 RootHide 安装布局。\n\n- 限定为仅向微信主程序加载。\n\n- 原始附件没有可验证的上游版本，因此未将 Mach-O 的 `1.0.0` 当作插件产品版本。\n\n- “修复至最新版微信”属于提供者说明，目前没有最新版微信真机验证结果。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}

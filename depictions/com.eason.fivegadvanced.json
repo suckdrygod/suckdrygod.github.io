@@ -1,0 +1,40 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#20B8BD",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "描述",
+      "views": [
+        {"class": "DepictionHeaderView", "title": "主要功能", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 根据真实 VPN 状态，为 Wi‑Fi 或蜂窝网络制式上色。\n\n- 浅色模式与深色模式可以分别选择颜色。\n\n- 颜色指示、反转指示、隐藏 VPN 图标和 5GA 显示均为独立开关。\n\n- VPN 开启并注销 SpringBoard 后，使用系统原生 VPN 胶囊完成恢复过渡。\n\n- 在前台应用中开启或关闭 VPN 时，颜色会立即更新。\n\n- 提供静音状态栏图标及“静音模式”控制中心模组。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "机型适配", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- **iPhone 14 系列 · iOS 16**：补充静音状态栏图标，并提供“静音模式”控制中心模组。\n\n- **iPhone 15 系列 · iOS 17**：使用系统原生静音图标，不重复加载补充图标或控制中心模组。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionHeaderView", "title": "使用说明", "useBoldText": true},
+        {"class": "DepictionMarkdownView", "markdown": "- 静音显示、VPN 图标显示与 VPN 颜色指示互相独立。\n\n- “隐藏 VPN”只隐藏状态栏图标，不会断开 VPN。\n\n- Wi‑Fi 下为 Wi‑Fi 标志上色；蜂窝网络下为 4G、5G 或 LTE 制式文字上色。\n\n- 插件仅改变显示效果，不会修改真实 VPN、蜂窝网络或静音状态。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionTableTextView", "title": "当前版本", "text": "2.6.7"},
+        {"class": "DepictionTableTextView", "title": "支持系统", "text": "iOS 16–17"}
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新",
+      "views": [
+        {"class": "DepictionSubheaderView", "title": "2.6.7", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 新增 Sileo 原生“描述 / 更新”双标签页面。\n\n- 按主要功能、机型适配和使用说明重新整理内容。\n\n- 普通软件包详情改为简洁摘要。\n\n- 本次仅调整展示排版，功能逻辑与 2.6.6 相同。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionSubheaderView", "title": "2.6.6", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 修复在前台应用中开启或关闭圈 X 后，VPN 颜色不能立即更新的问题。\n\n- VPN 状态变化时只重绘现有状态栏视图，不重放状态数据。\n\n- 保持系统原生重启 VPN 胶囊流程不变。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionSubheaderView", "title": "2.6.5", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 中文化软件包详情。\n\n- 补充主要功能和机型区别说明。", "useSpacing": true, "useRawFormat": false},
+        {"class": "DepictionSeparatorView"},
+        {"class": "DepictionSubheaderView", "title": "2.6.4", "useBoldText": true, "useBottomMargin": false},
+        {"class": "DepictionMarkdownView", "markdown": "- 对照 SingleVPN 原版数据流程处理 VPN 状态。\n\n- 保留真实 `vpnEntry`，由 SpringBoard 显示并关闭系统原生 VPN 胶囊。\n\n- 不使用假弹窗、状态服务器重放或人工动画计时。", "useSpacing": true, "useRawFormat": false}
+      ]
+    }
+  ]
+}
