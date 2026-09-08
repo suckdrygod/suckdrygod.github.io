@@ -28,3 +28,6 @@ local.relaxin.snapshotfix SileoDepiction https://suckdrygod.github.io/depictions
 local.sshwarningquiet Description 仅隐藏 RootHide 管理器中的“已安装 SSH Server”提示，不会关闭 SSH 服务或修改 SSH 配置。
 local.sshwarningquiet Section System
 local.sshwarningquiet SileoDepiction https://suckdrygod.github.io/depictions/local.sshwarningquiet.json
+com.binglan.kongzhidiy Description 控制中心中心美化
+com.binglan.kongzhidiy Section Tweaks
+com.binglan.kongzhidiy SileoDepiction https://suckdrygod.github.io/depictions/com.binglan.kongzhidiy.json
