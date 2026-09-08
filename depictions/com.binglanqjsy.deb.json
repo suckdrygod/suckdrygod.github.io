@@ -1,0 +1,80 @@
+{
+  "class" : "DepictionTabView",
+  "minVersion" : "0.4",
+  "tabs" : [
+    {
+      "class" : "DepictionStackView",
+      "tabname" : "描述",
+      "views" : [
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "主要功能",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 让简单截图，拥有更多可能。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionSeparatorView"
+        },
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "兼容性",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- control 声明为 Rootless 软件包，架构字段为 `iphoneos-arm64`；内部路径与二进制兼容性仍需在对应越狱环境真机验证。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionSeparatorView"
+        },
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "使用说明",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 安装后请按软件包提示注销或重启用户空间。\n\n- 更新前建议备份重要数据。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionTableTextView",
+          "text" : "4.1.7-end",
+          "title" : "当前版本"
+        },
+        {
+          "class" : "DepictionTableTextView",
+          "text" : "Tweaks",
+          "title" : "分类"
+        }
+      ]
+    },
+    {
+      "class" : "DepictionStackView",
+      "tabname" : "更新",
+      "views" : [
+        {
+          "class" : "DepictionSubheaderView",
+          "title" : "4.1.7-end",
+          "useBoldText" : true,
+          "useBottomMargin" : false
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 发布 全局水印Pro 4.1.7-end。\n\n- 更新 Rootless 软件包。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        }
+      ]
+    }
+  ],
+  "tintColor" : "#20B8BD"
+}

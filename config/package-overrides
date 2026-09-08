@@ -31,3 +31,6 @@ local.sshwarningquiet SileoDepiction https://suckdrygod.github.io/depictions/loc
 com.binglan.kongzhidiy Description 控制中心中心美化
 com.binglan.kongzhidiy Section Tweaks
 com.binglan.kongzhidiy SileoDepiction https://suckdrygod.github.io/depictions/com.binglan.kongzhidiy.json
+com.binglanqjsy.deb Description 让简单截图，拥有更多可能。
+com.binglanqjsy.deb Section Tweaks
+com.binglanqjsy.deb SileoDepiction https://suckdrygod.github.io/depictions/com.binglanqjsy.deb.json
