@@ -14,9 +14,6 @@ com.eason.shortcutsintentguard Description 修复 iOS 16 快捷指令因 Visual 
 com.eason.shortcutsintentguard SileoDepiction https://suckdrygod.github.io/depictions/com.eason.shortcutsintentguard.json
 com.eason.yikey Description 为 iPhone 14 和 iPhone 15 Pro 系列提供按键截图与图片翻译功能。
 com.eason.yikey SileoDepiction https://suckdrygod.github.io/depictions/com.eason.yikey.json
-com.netskao.wcdisablehotupdates Description 禁止微信 8.0.76.36 执行热更新，同时保留公众号所需的启动初始化。
-com.netskao.wcdisablehotupdates Section 微信插件
-com.netskao.wcdisablehotupdates SileoDepiction https://suckdrygod.github.io/depictions/com.netskao.wcdisablehotupdates.json
 com.eason.wechatku Description 修复闪退至最新版微信。
 com.eason.wechatku Section 微信插件
 com.eason.wechatku SileoDepiction https://suckdrygod.github.io/depictions/com.eason.wechatku.json
