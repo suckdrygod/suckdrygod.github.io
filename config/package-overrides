@@ -34,3 +34,6 @@ com.binglan.kongzhidiy SileoDepiction https://suckdrygod.github.io/depictions/co
 com.binglanqjsy.deb Description 让简单截图，拥有更多可能。
 com.binglanqjsy.deb Section Tweaks
 com.binglanqjsy.deb SileoDepiction https://suckdrygod.github.io/depictions/com.binglanqjsy.deb.json
+cn.zqbb.cocoatop64.relaxin Description Process Viewer For IOS GUI 内置中文版
+cn.zqbb.cocoatop64.relaxin Section Utilities
+cn.zqbb.cocoatop64.relaxin SileoDepiction https://suckdrygod.github.io/depictions/cn.zqbb.cocoatop64.relaxin.json
