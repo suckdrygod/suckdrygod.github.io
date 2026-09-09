@@ -1,0 +1,80 @@
+{
+  "class" : "DepictionTabView",
+  "minVersion" : "0.4",
+  "tabs" : [
+    {
+      "class" : "DepictionStackView",
+      "tabname" : "描述",
+      "views" : [
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "主要功能",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 没有闪退问题的使用Netskao的版本\n\n- 使用某些插件导致公众号闪退问题的可以使用此版本",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionSeparatorView"
+        },
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "兼容性",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- control 声明为 RootHide 软件包，架构字段为 `iphoneos-arm64e",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionSeparatorView"
+        },
+        {
+          "class" : "DepictionHeaderView",
+          "title" : "使用说明",
+          "useBoldText" : true
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 安装后请按软件包提示注销或重启用户空间。\n\n- 更新前建议备份重要数据。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        },
+        {
+          "class" : "DepictionTableTextView",
+          "text" : "2.6-rh1",
+          "title" : "当前版本"
+        },
+        {
+          "class" : "DepictionTableTextView",
+          "text" : "Tweaks",
+          "title" : "分类"
+        }
+      ]
+    },
+    {
+      "class" : "DepictionStackView",
+      "tabname" : "更新",
+      "views" : [
+        {
+          "class" : "DepictionSubheaderView",
+          "title" : "2.6-rh1",
+          "useBoldText" : true,
+          "useBottomMargin" : false
+        },
+        {
+          "class" : "DepictionMarkdownView",
+          "markdown" : "- 发布 HotUpdates 2.6\n\n- 更新 RootHide 软件包。",
+          "useRawFormat" : false,
+          "useSpacing" : true
+        }
+      ]
+    }
+  ],
+  "tintColor" : "#20B8BD"
+}

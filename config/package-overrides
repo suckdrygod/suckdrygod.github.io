@@ -37,3 +37,6 @@ com.binglanqjsy.deb SileoDepiction https://suckdrygod.github.io/depictions/com.b
 cn.zqbb.cocoatop64.relaxin Description Process Viewer For IOS GUI 内置中文版
 cn.zqbb.cocoatop64.relaxin Section Utilities
 cn.zqbb.cocoatop64.relaxin SileoDepiction https://suckdrygod.github.io/depictions/cn.zqbb.cocoatop64.relaxin.json
+com.eason.wcdisablehotupdates Description 微信禁用热更新，减少热更新频繁导致后台被杀。
+com.eason.wcdisablehotupdates Section Tweaks
+com.eason.wcdisablehotupdates SileoDepiction https://suckdrygod.github.io/depictions/com.eason.wcdisablehotupdates.json
