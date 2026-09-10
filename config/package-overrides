@@ -8,7 +8,9 @@ com.25mao.leftPan Description 为应用加入左滑返回手势，并修复微�
 com.25mao.leftPan SileoDepiction https://suckdrygod.github.io/depictions/com.25mao.leftPan.json
 com.eason.fivegadvanced Description VPN 状态栏上色、隐藏 VPN、5GA 与静音显示增强，支持 iOS 16–17。
 com.eason.fivegadvanced SileoDepiction https://suckdrygod.github.io/depictions/com.eason.fivegadvanced.json
-com.eason.folderdockglass Description 为 Dock、文件夹和锁屏通知加入玻璃效果的 RootHide 版本。
+com.eason.folderdockglass Name FolderDockGlass (RootHide)
+com.eason.folderdockglass Description RootHide edition. Adds a glass effect only to the Dock, folder icons, opened folders, and Lock Screen notifications. No settings required; install with Sileo or Zebra, then perform a userspace reboot.
+com.eason.folderdockglass Section Tweaks
 com.eason.folderdockglass SileoDepiction https://suckdrygod.github.io/depictions/com.eason.folderdockglass.json
 com.eason.shortcutsintentguard Description 修复 iOS 16 快捷指令因 Visual Intelligence App Intent 元数据导致的闪退。
 com.eason.shortcutsintentguard SileoDepiction https://suckdrygod.github.io/depictions/com.eason.shortcutsintentguard.json
